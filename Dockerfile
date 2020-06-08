@@ -116,6 +116,7 @@ RUN yum clean all
 RUN for MNTPOINT in \
         /cvmfs \
         /hadoop \
+        /ceph \
         /hdfs \
         /lizard \
         /mnt/hadoop \
