@@ -1,4 +1,4 @@
-FROM nvidia/cuda:10.0-cudnn7-devel-centos7
+FROM nvidia/cuda:10.2-cudnn7-devel-centos7
 MAINTAINER Mats Rynge "rynge@isi.edu"
 
 RUN yum -y upgrade
