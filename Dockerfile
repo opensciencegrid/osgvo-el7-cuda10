@@ -138,3 +138,4 @@ COPY .singularity.d /.singularity.d
 # build info
 RUN echo "Timestamp:" `date --utc` | tee /image-build-info.txt
 
+
