@@ -5,7 +5,7 @@ RUN yum -y upgrade
 RUN yum -y install epel-release yum-plugin-priorities
 
 # osg repo
-RUN yum -y install http://repo.opensciencegrid.org/osg/3.4/osg-3.4-el7-release-latest.rpm
+RUN yum -y install http://repo.opensciencegrid.org/osg/3.5/osg-3.5-el7-release-latest.rpm
    
 # pegasus repo 
 RUN echo -e "# Pegasus\n[Pegasus]\nname=Pegasus\nbaseurl=http://download.pegasus.isi.edu/wms/download/rhel/7/\$basearch/\ngpgcheck=0\nenabled=1\npriority=50" >/etc/yum.repos.d/pegasus.repo
@@ -130,7 +130,7 @@ RUN for MNTPOINT in \
 
 # make sure we have a way to bind host provided libraries
 # see https://github.com/singularityware/singularity/issues/611
-RUN mkdir -p /host-libs /etc/OpenCL/vendors
+RUN mkdir -p /etc/OpenCL/vendors
 
 # some extra singularity stuff
 COPY .singularity.d /.singularity.d
