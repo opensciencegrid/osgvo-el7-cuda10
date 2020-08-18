@@ -1,0 +1,7 @@
+{
+    "opensciencegrid.name": "EL 7 CUDA 10",
+    "opensciencegrid.description": "Enterprise Linux (CentOS) 7 base image, with CUDA 10",
+    "opensciencegrid.url": "https://developer.nvidia.com/cuda-toolkit",
+    "opensciencegrid.category": "Base",
+    "opensciencegrid.definition_url": "https://github.com/opensciencegrid/osgvo-el7-cuda10"
+}
