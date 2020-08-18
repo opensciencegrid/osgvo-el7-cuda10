@@ -1,5 +1,10 @@
 FROM nvidia/cuda:10.2-cudnn7-devel-centos7
-MAINTAINER Mats Rynge "rynge@isi.edu"
+
+LABEL opensciencegrid.name="EL 7 CUDA 10"
+LABEL opensciencegrid.description="Enterprise Linux (CentOS) 7 base image, with CUDA 10"
+LABEL opensciencegrid.url="https://developer.nvidia.com/cuda-toolkit"
+LABEL opensciencegrid.category="Base"
+LABEL opensciencegrid.definition_url="https://github.com/opensciencegrid/osgvo-el7-cuda10"
 
 RUN yum -y upgrade
 RUN yum -y install epel-release yum-plugin-priorities
