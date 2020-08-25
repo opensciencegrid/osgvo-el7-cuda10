@@ -137,8 +137,12 @@ RUN for MNTPOINT in \
 # see https://github.com/singularityware/singularity/issues/611
 RUN mkdir -p /etc/OpenCL/vendors
 
+ENV PS1="Singularity \$SINGULARITY_NAME:\\w> "
+ENV LD_LIBRARY_PATH=/usr/local/cuda/lib64:/.singularity.d/libs
+ENV PATH=/usr/local/cuda/bin:/usr/local/bin:/usr/bin:/bin
+
 # some extra singularity stuff
-COPY .singularity.d /.singularity.d
+COPY osg-labels.json /
 
 # build info
 RUN echo "Timestamp:" `date --utc` | tee /image-build-info.txt
