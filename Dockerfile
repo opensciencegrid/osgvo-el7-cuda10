@@ -6,15 +6,11 @@ LABEL opensciencegrid.url="https://developer.nvidia.com/cuda-toolkit"
 LABEL opensciencegrid.category="Base"
 LABEL opensciencegrid.definition_url="https://github.com/opensciencegrid/osgvo-el7-cuda10"
 
-RUN yum -y upgrade
 RUN yum -y install epel-release yum-plugin-priorities
 
 # osg repo
-RUN yum -y install http://repo.opensciencegrid.org/osg/3.5/osg-3.5-el7-release-latest.rpm
+RUN yum -y install http://repo.opensciencegrid.org/osg/3.6/osg-3.6-el7-release-latest.rpm
    
-# pegasus repo 
-RUN echo -e "# Pegasus\n[Pegasus]\nname=Pegasus\nbaseurl=http://download.pegasus.isi.edu/wms/download/rhel/7/\$basearch/\ngpgcheck=0\nenabled=1\npriority=50" >/etc/yum.repos.d/pegasus.repo
-
 # well rounded basic system to support a wide range of user jobs
 RUN yum -y groups mark convert \
     && yum -y grouplist \
@@ -104,15 +100,8 @@ RUN yum -y install \
            zlib-devel \
            which
 
-# osg
-RUN yum -y install osg-ca-certs osg-wn-client \
-    && rm -f /etc/grid-security/certificates/*.r0
-
 # htcondor - include so we can chirp
 RUN yum -y install condor
-
-# pegasus
-RUN yum -y install pegasus
 
 # Cleaning caches to reduce size of image
 RUN yum clean all
